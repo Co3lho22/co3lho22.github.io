@@ -2,10 +2,11 @@
 layout: default
 title: Bio
 ---
+
 # Bio
 
 ## Introduction
-I am a committed, focused, and organized individual...
+I am a committed, focused, and organized individual with a creative flair...
 
 ## Education
 **Bachelor’s Degree in Computer Science at FCUP** Expected Completion: September 2024
