@@ -14,7 +14,7 @@
         <li><a href="{{ '/' | relative_url }}">Home</a></li>
         <li><a href="{{ '/bio' | relative_url }}">Bio</a></li>
         <li><a href="{{ '/projects' | relative_url }}">Projects</a></li>
-        <li><a href="{{ '/article' | relative_url }}">Articles</a></li>
+        <li><a href="{{ '/articles' | relative_url }}">Articles</a></li>
         <li><a href="{{ '/certs' | relative_url }}">Certs</a></li>
       </ul>
     </nav>
@@ -23,7 +23,12 @@
     {{ content }}
   </main>
   <footer>
-    <p>&copy; 2024 Diogo Coelho</p>
+      <div class="contact-section">
+          <a href="https://www.linkedin.com/in/diogo-coelho-544139115/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          <a href="https://github.com/Co3lho22" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+          <a href="mailto:co3lho22@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+      </div>
+      <p>&copy; 2024 Diogo Coelho</p>
   </footer>
 </body>
 </html>

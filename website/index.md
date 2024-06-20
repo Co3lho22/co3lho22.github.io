@@ -4,8 +4,7 @@ title: Home
 ---
 
 <div class="home-header">
-  <h1>Diogo Coelho</h1>
-  <p>A Computer Science student passionate about cybersecurity, cloud computing, and solving complex problems.</p>
+  <h1>Welcome to My Personal Space</h1>
 </div>
 
 <div class="profile-container">
@@ -13,7 +12,8 @@ title: Home
     <img src="images/me1.jpg" alt="Profile Picture" class="profile-image">
   </div>
   <div class="profile-quote-container">
-    <h2>Welcome to My Personal Space</h2>
+    <h2>Diogo Coelho<br></h2>
+    <h3>Phrase of the day:</h3>
     <blockquote class="profile-quote">
       "It's not a bug; it's an undocumented feature!"<br>
       — Anonymous
@@ -22,18 +22,21 @@ title: Home
 </div>
 
 <style>
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #1F1D2E; /* Deep Midnight */
+    color: #E0DEF4; /* Soft White */
+    margin: 0;
+    padding: 0;
+  }
   .home-header {
     text-align: center;
     padding: 2rem 0;
-    background: #1e1e1e;
+    background: #1F1D2E;
   }
   .home-header h1 {
-    font-size: 2.5rem;
-    color: #00e676;
-  }
-  .home-header p {
-    font-size: 1.2rem;
-    color: #e0e0e0;
+    font-size: 3rem;
+    color: #E2A0A8; /* Muted Rose */
   }
   .profile-container {
     display: flex;
@@ -43,7 +46,7 @@ title: Home
     padding: 2rem;
     margin: 2rem auto;
     max-width: 900px;
-    background: #1e1e1e;
+    background: #2A273F; /* Slightly lighter midnight */
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
@@ -60,21 +63,25 @@ title: Home
   .profile-quote-container {
     flex: 2;
     padding: 1rem;
+    text-align: center;
   }
   .profile-quote-container h2 {
-    font-size: 1.5rem;
-    color: #00e676;
+    font-size: 2rem;
+    color: #E2A0A8; /* Muted Rose */
     margin-bottom: 1rem;
   }
   .profile-quote {
     font-size: 1.2rem;
     font-style: italic;
-    color: #e0e0e0;
+    color: #E0DEF4;
   }
   @media (max-width: 768px) {
     .profile-container {
       flex-direction: column;
       text-align: center;
+    }
+    .profile-image-container, .profile-quote-container {
+      flex: none;
     }
     .profile-quote {
       text-align: center;
