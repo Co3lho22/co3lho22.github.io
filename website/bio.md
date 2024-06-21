@@ -3,5 +3,5 @@ layout: default
 title: Bio
 ---
 
-{% include bio.html %}
+{% include_relative bio.html %}
 

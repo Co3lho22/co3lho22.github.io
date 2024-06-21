@@ -3,5 +3,5 @@ layout: default
 title: Projects
 ---
 
-{% include projects.html %}
+{% include_relative projects.html %}
 

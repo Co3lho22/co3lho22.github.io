@@ -1,11 +1,14 @@
 /* Variables */
 :root {
-  --deep-midnight: #1F1D2E;
-  --soft-white: #E0DEF4;
-  --muted-rose: #E2A0A8;
-  --background-lighter: #2A273F;
-  --highlight-green: #00e676;
-  --highlight-green-dark: #00c853;
+  --deep-midnight: #1b1b2f;
+  --soft-white: #e0e0e0;
+  --cyber-green: #21c25e;
+  --cyber-green-dark: #1a9e4d;
+  --cyber-blue: #273c75;
+  --cyber-blue-dark: #192a56;
+  --background-lighter: #2f3640;
+  --highlight-red: #e84118;
+  --highlight-red-dark: #c23616;
 }
 
 /* Global Styles */
@@ -19,7 +22,7 @@ body {
 }
 
 header {
-  background: var(--deep-midnight);
+  background: var(--cyber-blue);
   padding: 1rem 0;
 }
 
@@ -42,17 +45,18 @@ header {
 }
 
 .nav li a:hover {
-  color: var(--highlight-green);
+  color: var(--cyber-green);
 }
 
 main {
   padding: 2rem;
+  background-color: var(--background-lighter);
 }
 
 footer {
   text-align: center;
   padding: 1rem;
-  background: var(--deep-midnight);
+  background: var(--cyber-blue-dark);
   position: fixed;
   width: 100%;
   bottom: 0;
@@ -72,7 +76,7 @@ footer {
 }
 
 .contact-section a:hover {
-  color: var(--highlight-green);
+  color: var(--cyber-green);
 }
 
 .contact-section i {
@@ -83,7 +87,7 @@ button, .button {
   display: inline-block;
   margin-top: 1rem;
   padding: 0.5rem 1rem;
-  background-color: var(--highlight-green);
+  background-color: var(--cyber-green);
   color: var(--deep-midnight);
   text-decoration: none;
   border-radius: 5px;
@@ -92,7 +96,7 @@ button, .button {
 }
 
 button:hover, .button:hover {
-  background-color: var(--highlight-green-dark);
+  background-color: var(--cyber-green-dark);
 }
 
 /* Media Queries for Responsiveness */

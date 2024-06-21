@@ -3,5 +3,5 @@ layout: default
 title: Certs
 ---
 
-{% include certs.html %}
+{% include_relative certs.html %}
 
