@@ -1,28 +1,28 @@
 /* Variables */
 :root {
-  --deep-midnight: #1b1b2f;
-  --soft-white: #e0e0e0;
-  --cyber-green: #21c25e;
-  --cyber-green-dark: #1a9e4d;
-  --cyber-blue: #273c75;
-  --cyber-blue-dark: #192a56;
-  --background-lighter: #2f3640;
-  --highlight-red: #e84118;
-  --highlight-red-dark: #c23616;
+  --color-primary: #1b1b2f;
+  --color-secondary: #e0e0e0;
+  --color-accent: #21c25e;
+  --color-accent-dark: #1a9e4d;
+  --color-header: #273c75;
+  --color-footer: #192a56;
+  --color-background: #2f3640;
+  --color-highlight: #e84118;
+  --color-highlight-dark: #c23616;
 }
 
 /* Global Styles */
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: var(--deep-midnight);
-  color: var(--soft-white);
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
   margin: 0;
   padding: 0;
   line-height: 1.6;
 }
 
 header {
-  background: var(--cyber-blue);
+  background: var(--color-header);
   padding: 1rem 0;
 }
 
@@ -39,24 +39,24 @@ header {
 }
 
 .nav li a {
-  color: var(--soft-white);
+  color: var(--color-secondary);
   text-decoration: none;
   font-size: 1.2rem;
 }
 
 .nav li a:hover {
-  color: var(--cyber-green);
+  color: var(--color-accent);
 }
 
 main {
   padding: 2rem;
-  background-color: var(--background-lighter);
+  background-color: var(--color-background);
 }
 
 footer {
   text-align: center;
   padding: 1rem;
-  background: var(--cyber-blue-dark);
+  background: var(--color-footer);
   position: fixed;
   width: 100%;
   bottom: 0;
@@ -70,13 +70,13 @@ footer {
 }
 
 .contact-section a {
-  color: var(--soft-white);
+  color: var(--color-secondary);
   text-decoration: none;
   font-size: 1.2rem;
 }
 
 .contact-section a:hover {
-  color: var(--cyber-green);
+  color: var(--color-accent);
 }
 
 .contact-section i {
@@ -87,8 +87,8 @@ button, .button {
   display: inline-block;
   margin-top: 1rem;
   padding: 0.5rem 1rem;
-  background-color: var(--cyber-green);
-  color: var(--deep-midnight);
+  background-color: var(--color-accent);
+  color: var(--color-primary);
   text-decoration: none;
   border-radius: 5px;
   border: none;
@@ -96,7 +96,7 @@ button, .button {
 }
 
 button:hover, .button:hover {
-  background-color: var(--cyber-green-dark);
+  background-color: var(--color-accent-dark);
 }
 
 /* Media Queries for Responsiveness */

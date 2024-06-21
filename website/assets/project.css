@@ -1,46 +1,46 @@
 .project-details {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background: var(--background-lighter);
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: var(--color-background);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .project-details h1 {
-    font-size: 2.5rem;
-    color: var(--muted-rose);
-    text-align: center;
+  font-size: 2.5rem;
+  color: var(--color-highlight);
+  text-align: center;
 }
 
 .project-details h2 {
-    font-size: 1.5rem;
-    color: var(--muted-rose);
-    margin-top: 1.5rem;
+  font-size: 1.5rem;
+  color: var(--color-highlight);
+  margin-top: 1.5rem;
 }
 
 .project-details p {
-    color: var(--soft-white);
-    font-size: 1.2rem;
-    line-height: 1.6;
+  color: var(--color-secondary);
+  font-size: 1.2rem;
+  line-height: 1.6;
 }
 
 .project-link a {
-    color: var(--highlight-green);
-    text-decoration: none;
+  color: var(--color-accent);
+  text-decoration: none;
 }
 
 .project-link a:hover {
-    color: var(--highlight-green-dark);
+  color: var(--color-accent-dark);
 }
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
-    .project-details {
-        padding: 1rem;
-    }
-    .project-details h1 {
-        font-size: 2rem;
-    }
+  .project-details {
+    padding: 1rem;
+  }
+  .project-details h1 {
+    font-size: 2rem;
+  }
 }
 

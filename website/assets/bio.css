@@ -1,12 +1,12 @@
 .bio-header {
   text-align: center;
   padding: 2rem 0;
-  background: #1e1e1e;
+  background: var(--color-primary);
 }
 
 .bio-header h1 {
   font-size: 3rem;
-  color: var(--muted-rose);
+  color: var(--color-highlight);
 }
 
 .bio-container {
@@ -17,7 +17,7 @@
   padding: 2rem;
   margin: 2rem auto;
   max-width: 1200px;
-  background: var(--background-lighter);
+  background: var(--color-background);
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }

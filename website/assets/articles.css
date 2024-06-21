@@ -1,12 +1,12 @@
 .articles-header {
   text-align: center;
   padding: 2rem 0;
-  background: #1e1e1e;
+  background: var(--color-primary);
 }
 
 .articles-header h1 {
   font-size: 3rem;
-  color: var(--muted-rose);
+  color: var(--color-highlight);
 }
 
 .filters {
@@ -26,8 +26,8 @@
 .tag {
   display: inline-block;
   padding: 0.5rem 1rem;
-  background: var(--background-lighter);
-  color: var(--soft-white);
+  background: var(--color-background);
+  color: var(--color-secondary);
   border-radius: 5px;
   margin: 0.2rem;
   cursor: pointer;
@@ -45,7 +45,7 @@
 
 .article-item {
   width: 80%;
-  background: var(--background-lighter);
+  background: var(--color-background);
   padding: 1rem;
   margin: 1rem 0;
   border-radius: 10px;
@@ -54,11 +54,11 @@
 
 .article-item h2 {
   margin: 0;
-  color: var(--muted-rose);
+  color: var(--color-highlight);
 }
 
 .article-item p {
-  color: var(--soft-white);
+  color: var(--color-secondary);
 }
 
 .article-item .tags {

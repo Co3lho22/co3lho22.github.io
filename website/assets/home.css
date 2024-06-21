@@ -1,69 +1,69 @@
 .home-header {
-    text-align: center;
-    padding: 2rem 0;
-    background: var(--deep-midnight);
+  text-align: center;
+  padding: 2rem 0;
+  background: var(--color-primary);
 }
 
 .home-header h1 {
-    font-size: 3rem;
-    color: var(--muted-rose);
+  font-size: 3rem;
+  color: var(--color-highlight);
 }
 
 .profile-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2rem;
-    margin: 2rem auto;
-    max-width: 900px;
-    background: var(--background-lighter);
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 900px;
+  background: var(--color-background);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .profile-image-container {
-    flex: 1;
-    text-align: center;
-    padding: 1rem;
+  flex: 1;
+  text-align: center;
+  padding: 1rem;
 }
 
 .profile-image {
-    border-radius: 10px;
-    max-width: 100%;
-    height: auto;
+  border-radius: 10px;
+  max-width: 100%;
+  height: auto;
 }
 
 .profile-quote-container {
-    flex: 2;
-    padding: 1rem;
-    text-align: center;
+  flex: 2;
+  padding: 1rem;
+  text-align: center;
 }
 
 .profile-quote-container h2 {
-    font-size: 2rem;
-    color: var(--muted-rose);
-    margin-bottom: 1rem;
+  font-size: 2rem;
+  color: var(--color-highlight);
+  margin-bottom: 1rem;
 }
 
 .profile-quote {
-    font-size: 1.2rem;
-    font-style: italic;
-    color: var(--soft-white);
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--color-secondary);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .profile-container {
-        flex-direction: column;
-        text-align: center;
-    }
-    .profile-image-container, .profile-quote-container {
-        flex: none;
-    }
-    .profile-quote {
-        text-align: center;
-    }
+  .profile-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .profile-image-container, .profile-quote-container {
+    flex: none;
+  }
+  .profile-quote {
+    text-align: center;
+  }
 }
 /* End of Responsive Design */
 
