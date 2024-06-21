@@ -1,0 +1,84 @@
+.articles-header {
+  text-align: center;
+  padding: 2rem 0;
+  background: #1e1e1e;
+}
+
+.articles-header h1 {
+  font-size: 3rem;
+  color: var(--muted-rose);
+}
+
+.filters {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+#searchBar {
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.tags {
+  margin: 1rem 0;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: var(--background-lighter);
+  color: var(--soft-white);
+  border-radius: 5px;
+  margin: 0.2rem;
+  cursor: pointer;
+}
+
+.tag:hover {
+  background: #3C3B58;
+}
+
+.articles-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.article-item {
+  width: 80%;
+  background: var(--background-lighter);
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.article-item h2 {
+  margin: 0;
+  color: var(--muted-rose);
+}
+
+.article-item p {
+  color: var(--soft-white);
+}
+
+.article-item .tags {
+  margin-top: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .articles-header h1 {
+    font-size: 2.5rem; /* Adjust font size for smaller screens */
+  }
+  #searchBar {
+    width: 100%; /* Make search bar full width on smaller screens */
+  }
+  .articles-list {
+    padding: 0 1rem; /* Add padding to articles list */
+  }
+  .article-item {
+    width: 100%; /* Make article items full width on smaller screens */
+    padding: 1rem; /* Adjust padding */
+  }
+}
+

@@ -4,8 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }} | Diogo Coelho</title>
+  <!-- For the global css-->
   <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <!-- For the css config for each file-->
+  <link rel="stylesheet" href="{{ '/assets/' | append: page.title | downcase | append: '.css' | relative_url }}">
 </head>
 <body>
   <header>
@@ -23,77 +26,13 @@
     {{ content }}
   </main>
   <footer>
-      <div class="contact-section">
-          <a href="https://www.linkedin.com/in/diogo-coelho-544139115/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-          <a href="https://github.com/Co3lho22" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-          <a href="mailto:co3lho22@gmail.com"><i class="fas fa-envelope"></i> Email</a>
-      </div>
-      <p>&copy; 2024 Diogo Coelho</p>
+    <div class="contact-section">
+      <a href="https://www.linkedin.com/in/diogo-coelho-544139115/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="https://github.com/Co3lho22" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+      <a href="mailto:co3lho22@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+    </div>
+    <p>&copy; 2024 Diogo Coelho</p>
   </footer>
-
-  <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      background-color: #121212;
-      color: #e0e0e0;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-    }
-    header {
-      background: #1e1e1e;
-      padding: 1rem 0;
-    }
-    .nav {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      margin: 0;
-      padding: 0;
-    }
-    .nav li {
-      margin: 0 1rem;
-    }
-    .nav li a {
-      color: #e0e0e0;
-      text-decoration: none;
-      font-size: 1.2rem;
-    }
-    .nav li a:hover {
-      color: #00e676;
-    }
-    main {
-      padding: 2rem;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #1e1e1e;
-      position: fixed;
-      width: 100%;
-      bottom: 0;
-    }
-    .contact-section {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: 1rem;
-    }
-    .contact-section a {
-      color: #e0e0e0;
-      text-decoration: none;
-      font-size: 1.2rem;
-    }
-    .contact-section a:hover {
-      color: #00e676;
-    }
-    .contact-section i {
-      margin-right: 0.5rem;
-    }
-  </style>
-
 </body>
 </html>
-
-
 

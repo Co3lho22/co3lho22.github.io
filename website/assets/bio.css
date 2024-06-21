@@ -1,0 +1,60 @@
+.bio-header {
+  text-align: center;
+  padding: 2rem 0;
+  background: #1e1e1e;
+}
+
+.bio-header h1 {
+  font-size: 3rem;
+  color: var(--muted-rose);
+}
+
+.bio-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+  background: var(--background-lighter);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.bio-content {
+  flex: 2;
+  padding: 1rem;
+}
+
+.bio-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.bio-image-container {
+  flex: 1;
+  text-align: center;
+  padding: 1rem;
+}
+
+.bio-image {
+  border-radius: 10px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .bio-container {
+    flex-direction: column; /* Stack content vertically on smaller screens */
+    text-align: center;
+  }
+  .bio-content, .bio-image-container {
+    flex: none; /* Reset flex property */
+  }
+  .bio-content h2 {
+    text-align: center; /* Center-align headers on smaller screens */
+  }
+}
+
