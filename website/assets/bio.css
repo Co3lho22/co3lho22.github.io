@@ -2,11 +2,13 @@
   text-align: center;
   padding: 2rem 0;
   background: var(--color-primary);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .bio-header h1 {
   font-size: 3rem;
   color: var(--color-highlight);
+  margin: 0;
 }
 
 .bio-container {
@@ -25,11 +27,18 @@
 .bio-content {
   flex: 2;
   padding: 1rem;
+  color: var(--color-secondary);
 }
 
 .bio-content h2 {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   margin-bottom: 1rem;
+  color: var(--color-highlight-dark);
+}
+
+.bio-content p {
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 .bio-image-container {
@@ -42,19 +51,36 @@
   border-radius: 10px;
   max-width: 100%;
   height: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-highlight);
+  color: var(--color-primary);
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(--color-highlight-dark);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .bio-container {
-    flex-direction: column; /* Stack content vertically on smaller screens */
+    flex-direction: column;
     text-align: center;
   }
   .bio-content, .bio-image-container {
-    flex: none; /* Reset flex property */
+    flex: none;
+    padding: 1rem 0;
   }
   .bio-content h2 {
-    text-align: center; /* Center-align headers on smaller screens */
+    text-align: center;
   }
 }
 
