@@ -1,29 +1,30 @@
-/* Variables */
 :root {
-  --color-primary: #1b1b2f;
-  --color-secondary: #e0e0e0;
-  --color-accent: #21c25e;
-  --color-accent-dark: #1a9e4d;
-  --color-header: #273c75;
-  --color-footer: #192a56;
-  --color-background: #2f3640;
-  --color-highlight: #e84118;
-  --color-highlight-dark: #c23616;
+  --color-primary: #322A26; /* Van Dyke */
+  --color-secondary: #e0e0e0; /* Soft White */
+  --color-accent: #191308; /* Smoky Black */
+  --color-accent-dark: #454B66; /* Delft Blue */
+  --color-highlight: #677DB7; /* Glaucous */
+  --color-highlight-dark: #9CA3DB; /* Vista Blue */
+  --color-background: #1b1b2f; /* Dark Background */
+  --color-warning: #e84118; /* Highlight Red */
+  --color-warning-dark: #c23616; /* Dark Highlight Red */
 }
 
 /* Global Styles */
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: var(--color-primary);
+  background-color: var(--color-background);
   color: var(--color-secondary);
   margin: 0;
   padding: 0;
   line-height: 1.6;
+  font-size: 16px;
 }
 
 header {
-  background: var(--color-header);
+  background: var(--color-accent);
   padding: 1rem 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .nav {
@@ -42,24 +43,26 @@ header {
   color: var(--color-secondary);
   text-decoration: none;
   font-size: 1.2rem;
+  transition: color 0.3s ease;
 }
 
 .nav li a:hover {
-  color: var(--color-accent);
+  color: var(--color-highlight);
 }
 
 main {
   padding: 2rem;
-  background-color: var(--color-background);
+  background-color: var(--color-primary);
 }
 
 footer {
   text-align: center;
   padding: 1rem;
-  background: var(--color-footer);
+  background: var(--color-accent-dark);
   position: fixed;
   width: 100%;
   bottom: 0;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .contact-section {
@@ -73,10 +76,11 @@ footer {
   color: var(--color-secondary);
   text-decoration: none;
   font-size: 1.2rem;
+  transition: color 0.3s ease;
 }
 
 .contact-section a:hover {
-  color: var(--color-accent);
+  color: var(--color-highlight);
 }
 
 .contact-section i {
@@ -87,16 +91,17 @@ button, .button {
   display: inline-block;
   margin-top: 1rem;
   padding: 0.5rem 1rem;
-  background-color: var(--color-accent);
+  background-color: var(--color-highlight);
   color: var(--color-primary);
   text-decoration: none;
   border-radius: 5px;
   border: none;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button:hover, .button:hover {
-  background-color: var(--color-accent-dark);
+  background-color: var(--color-highlight-dark);
 }
 
 /* Media Queries for Responsiveness */
