@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} | Diogo Coelho</title>
+  <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul class="nav">
+        <li><a href="{{ '/' | relative_url }}">Home</a></li>
+        <li><a href="{{ '/bio' | relative_url }}">Bio</a></li>
+        <li><a href="{{ '/projects' | relative_url }}">Projects</a></li>
+        <li><a href="{{ '/articles' | relative_url }}">Articles</a></li>
+        <li><a href="{{ '/certs' | relative_url }}">Certs</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="article-details">
+      <h1>{{ page.title }}</h1>
+      <p class="date">{{ page.date | date: "%B %d, %Y" }}</p>
+      <div class="article-summary">
+        <h2>Summary:</h2>
+        <p>{{ page.excerpt }}</p>
+      </div>
+      <div class="article-image">
+        <img src="{{ page.image }}" alt="Article Image">
+      </div>
+      <div class="article-key-takeaways">
+        <h2>Key Takeaways:</h2>
+        <ul>
+          {% for takeaway in page.takeaways %}
+          <li>{{ takeaway }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="article-target-audience">
+        <h2>Is This for you?</h2>
+        <p>{{ page.audience }}</p>
+      </div>
+      <div class="article-full-post">
+        <h2>Read Full Article:</h2>
+        <p><a href="{{ page.full_post_url }}" target="_blank">Link to Full Post</a></p>
+      </div>
+    </div>
+    <div class="article-tags">
+        <h2>Tags:</h2>
+        <div class="tags">
+            {% for tag in page.tags %}
+            <span class="tag">{{ tag }}</span>
+            {% endfor %}
+        </div>
+    </div>
+  </main>
+  <footer>
+      <div class="contact-section">
+          <a href="https://www.linkedin.com/in/diogo-coelho-544139115/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          <a href="https://github.com/Co3lho22" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+          <a href="mailto:co3lho22@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+      </div>
+      <p>&copy; 2024 Diogo Coelho</p>
+  </footer>
+
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #121212;
+      color: #e0e0e0;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    header {
+      background: #1e1e1e;
+      padding: 1rem 0;
+    }
+    .nav {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+    }
+    .nav li {
+      margin: 0 1rem;
+    }
+    .nav li a {
+      color: #e0e0e0;
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+    .nav li a:hover {
+      color: #00e676;
+    }
+    main {
+      padding: 2rem;
+    }
+    .article-details {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: #2A273F;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .article-details h1 {
+      font-size: 2.5rem;
+      color: #E2A0A8;
+      text-align: center;
+    }
+    .article-details .date {
+      text-align: center;
+      color: #E0DEF4;
+    }
+    .article-summary,
+    .article-key-takeaways,
+    .article-target-audience,
+    .article-full-post,
+    .article-tags {
+      margin-top: 2rem;
+    }
+    .article-summary h2,
+    .article-key-takeaways h2,
+    .article-target-audience h2,
+    .article-full-post h2,
+    .article-tags h2 {
+      font-size: 1.5rem;
+      color: #E2A0A8;
+    }
+    .article-summary p,
+    .article-target-audience p {
+      color: #E0DEF4;
+    }
+    .article-image {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .article-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .article-key-takeaways ul {
+      list-style-type: disc;
+      color: #E0DEF4;
+    }
+    .article-key-takeaways li {
+      margin-left: 1.5rem;
+      margin-top: 0.5rem;
+    }
+    .article-tags .tags {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .article-tags .tag {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: #3C3B58;
+      color: #E0DEF4;
+      border-radius: 5px;
+      margin: 0.2rem;
+    }
+    .article-full-post a {
+      color: #00e676;
+      text-decoration: none;
+    }
+    .article-full-post a:hover {
+      color: #00c853;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #1e1e1e;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+    .contact-section {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .contact-section a {
+      color: #e0e0e0;
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+    .contact-section a:hover {
+      color: #00e676;
+    }
+    .contact-section i {
+      margin-right: 0.5rem;
+    }
+  </style>
+</body>
+</html>
+

@@ -42,7 +42,12 @@ collections:
   projects:
     output: true
     permalink: /projects/:path/
-
+  articles:
+    output: true
+    permalink: /articles/:path/
+  certs:
+    output: true
+    permalink: /certs/:path/
 
 # Exclude from processing.
 # The following items will not be processed, by default.

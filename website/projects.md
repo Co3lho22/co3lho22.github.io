@@ -13,9 +13,6 @@ title: Projects
     <span class="tag" onclick="filterProjects('Security')">Security</span>
     <span class="tag" onclick="filterProjects('Rust')">Rust</span>
     <span class="tag" onclick="filterProjects('Critical Systems')">Critical Systems</span>
-    <span class="tag" onclick="filterProjects('Topic2')">Topic2</span>
-    <span class="tag" onclick="filterProjects('Topic3')">Topic3</span>
-    <span class="tag" onclick="filterProjects('Topic4')">Topic4</span>
   </div>
 </div>
 
@@ -114,6 +111,6 @@ title: Projects
   }
   .project-item .tags {
     margin-top: 0.5rem;
-  }
+
 </style>
 
