@@ -5,37 +5,68 @@
 <div class="filters">
   <input type="text" id="searchBar" placeholder="Search for title...">
   <div class="tags">
-    <span class="tag" onclick="filterCerts('Security')">Security</span>
-    <span class="tag" onclick="filterCerts('Cloud')">Cloud</span>
-    <span class="tag" onclick="filterCerts('Networking')">Networking</span>
-    <span class="tag" onclick="filterCerts('Programming')">Programming</span>
-    <span class="tag" onclick="filterCerts('Topic5')">Topic5</span>
+    <span class="tag" onclick="toggleTag('Security')">Security</span>
+    <span class="tag" onclick="toggleTag('Cloud')">Cloud</span>
+    <span class="tag" onclick="toggleTag('Networking')">Networking</span>
+    <span class="tag" onclick="toggleTag('Programming')">Programming</span>
   </div>
+  <button class="clear-tags" onclick="clearTags()">Clear All Tags</button>
 </div>
 
 <div class="certs-list">
   {% for cert in site.certs %}
-  <div class="cert-item" data-tags="{{ cert.tags | join: ' ' }}">
-    <h2><a href="{{ cert.url }}">{{ cert.title }}</a></h2>
-    <p>{{ cert.description }}</p>
-    <div class="tags">
-      {% for tag in cert.tags %}
-      <span class="tag">{{ tag }}</span>
-      {% endfor %}
+  <a href="{{ cert.url }}" class="cert-item" data-tags="{{ cert.tags | join: ' ' }}">
+    <img src="{{ cert.image }}" alt="{{ cert.title }} image">
+    <div class="cert-info">
+      <h2>{{ cert.title }}</h2>
+      <p>{{ cert.description }}</p>
+      <div class="tags">
+        {% for tag in cert.tags %}
+        <span class="tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
     </div>
-  </div>
+  </a>
   {% endfor %}
 </div>
 
 <script>
-  function filterCerts(tag) {
+  let activeTags = [];
+
+  function toggleTag(tag) {
+    const tagIndex = activeTags.indexOf(tag);
+    if (tagIndex > -1) {
+      activeTags.splice(tagIndex, 1);
+    } else {
+      activeTags.push(tag);
+    }
+    updateTagDisplay();
+    filterCerts();
+  }
+
+  function clearTags() {
+    activeTags = [];
+    updateTagDisplay();
+    filterCerts();
+  }
+
+  function updateTagDisplay() {
+    const tags = document.querySelectorAll('.tag');
+    tags.forEach(tagElement => {
+      if (activeTags.includes(tagElement.innerText)) {
+        tagElement.classList.add('active');
+      } else {
+        tagElement.classList.remove('active');
+      }
+    });
+  }
+
+  function filterCerts() {
     const certs = document.querySelectorAll('.cert-item');
     certs.forEach(cert => {
-      if (cert.getAttribute('data-tags').includes(tag)) {
-        cert.style.display = 'block';
-      } else {
-        cert.style.display = 'none';
-      }
+      const certTags = cert.getAttribute('data-tags').split(' ');
+      const matches = activeTags.every(tag => certTags.includes(tag));
+      cert.style.display = matches ? 'flex' : 'none';
     });
   }
 
@@ -45,7 +76,7 @@
     certs.forEach(cert => {
       const title = cert.querySelector('h2').textContent.toLowerCase();
       if (title.includes(query)) {
-        cert.style.display = 'block';
+        cert.style.display = 'flex';
       } else {
         cert.style.display = 'none';
       }
