@@ -42,11 +42,31 @@
   color: var(--color-secondary);
   border-radius: 5px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.tag.active {
+  background: var(--color-highlight);
+  color: var(--color-primary);
 }
 
 .tag:hover {
   background: var(--color-accent);
+}
+
+.clear-tags {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--color-highlight);
+  color: var(--color-primary);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.clear-tags:hover {
+  background: var(--color-highlight-dark);
 }
 
 .projects-list {

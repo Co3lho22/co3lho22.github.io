@@ -5,10 +5,11 @@
 <div class="filters">
   <input type="text" id="searchBar" placeholder="Search for title...">
   <div class="tags">
-    <span class="tag" onclick="filterProjects('Security')">Security</span>
-    <span class="tag" onclick="filterProjects('Rust')">Rust</span>
-    <span class="tag" onclick="filterProjects('Critical Systems')">Critical Systems</span>
+    <span class="tag" onclick="toggleTag('Security')">Security</span>
+    <span class="tag" onclick="toggleTag('Rust')">Rust</span>
+    <span class="tag" onclick="toggleTag('Critical Systems')">Critical Systems</span>
   </div>
+  <button class="clear-tags" onclick="clearTags()">Clear All Tags</button>
 </div>
 
 <div class="projects-list">
@@ -26,14 +27,42 @@
 </div>
 
 <script>
-  function filterProjects(tag) {
+  let activeTags = [];
+
+  function toggleTag(tag) {
+    const tagIndex = activeTags.indexOf(tag);
+    if (tagIndex > -1) {
+      activeTags.splice(tagIndex, 1);
+    } else {
+      activeTags.push(tag);
+    }
+    updateTagDisplay();
+    filterProjects();
+  }
+
+  function clearTags() {
+    activeTags = [];
+    updateTagDisplay();
+    filterProjects();
+  }
+
+  function updateTagDisplay() {
+    const tags = document.querySelectorAll('.tag');
+    tags.forEach(tagElement => {
+      if (activeTags.includes(tagElement.innerText)) {
+        tagElement.classList.add('active');
+      } else {
+        tagElement.classList.remove('active');
+      }
+    });
+  }
+
+  function filterProjects() {
     const projects = document.querySelectorAll('.project-item');
     projects.forEach(project => {
-      if (project.getAttribute('data-tags').includes(tag)) {
-        project.style.display = 'block';
-      } else {
-        project.style.display = 'none';
-      }
+      const projectTags = project.getAttribute('data-tags').split(' ');
+      const matches = activeTags.every(tag => projectTags.includes(tag));
+      project.style.display = matches ? 'block' : 'none';
     });
   }
 
