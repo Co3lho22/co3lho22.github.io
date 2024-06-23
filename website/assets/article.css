@@ -7,7 +7,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  gap: 1.5rem; /* Added gap between elements */
+  gap: 1.5rem;
 }
 
 .article-details h1 {
@@ -24,16 +24,14 @@
 .article-summary,
 .article-key-takeaways,
 .article-target-audience,
-.article-full-post,
-.article-tags {
+.article-full-post {
   margin-top: 2rem;
 }
 
 .article-summary h2,
 .article-key-takeaways h2,
 .article-target-audience h2,
-.article-full-post h2,
-.article-tags h2 {
+.article-full-post h2 {
   font-size: 1.5rem;
   color: var(--color-highlight);
 }
@@ -64,27 +62,36 @@
   margin-top: 0.5rem;
 }
 
+.article-tags {
+  margin-top: 2rem;
+}
+
+.article-tags h2 {
+  font-size: 1.5rem;
+  color: var(--color-highlight);
+}
+
 .article-tags .tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem; /* Added gap between tags */
+  gap: 0.5rem;
 }
 
 .article-tags .tag {
   display: inline-block;
   padding: 0.5rem 1rem;
-  background: #3C3B58;
+  background: var(--color-accent);
   color: var(--color-secondary);
   border-radius: 5px;
 }
 
 .article-full-post a {
-  color: var(--color-accent);
+  color: var(--color-highlight);
   text-decoration: none;
 }
 
 .article-full-post a:hover {
-  color: var(--color-accent-dark);
+  color: var(--color-highlight-dark);
 }
 
 /* Media Queries for Responsiveness */

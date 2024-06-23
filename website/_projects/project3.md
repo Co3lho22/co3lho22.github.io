@@ -1,9 +1,9 @@
 ---
 layout: project
-title: Project 3
+title: Project 1
 description: Brief overview of the project.
-technologies: Critical Systems
+technologies: Rust, Security
 github_url: https://github.com/username/project-repo
-tags: [Critical Systems]
+tags: [Rust, Security]
 ---
 

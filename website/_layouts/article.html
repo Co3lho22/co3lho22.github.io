@@ -47,14 +47,14 @@
         <h2>Read Full Article:</h2>
         <p><a href="{{ page.full_post_url }}" target="_blank">Link to Full Post</a></p>
       </div>
-    </div>
-    <div class="article-tags">
+      <div class="article-tags">
         <h2>Tags:</h2>
         <div class="tags">
-            {% for tag in page.tags %}
-            <span class="tag">{{ tag }}</span>
-            {% endfor %}
+          {% for tag in page.tags %}
+          <span class="tag">{{ tag }}</span>
+          {% endfor %}
         </div>
+      </div>
     </div>
   </main>
   <footer>

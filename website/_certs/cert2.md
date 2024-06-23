@@ -1,8 +1,10 @@
 ---
 layout: cert
-title: Certification 2
-description: Another certification description.
+title: Certification 1
+description: Brief description of what I learned from this certification.
 cert_link: https://certification-link.com
-tags: [Programming, Networking]
+tags: [Security, Cloud]
 ---
+
+Detailed information about the certification goes here...
 

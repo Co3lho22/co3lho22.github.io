@@ -3,5 +3,5 @@ layout: default
 title: Home
 ---
 
-{% include_relative index.html %}
+{% include_relative index_f.html %}
 

@@ -6,3 +6,5 @@ cert_link: https://certification-link.com
 tags: [Security, Cloud]
 ---
 
+Detailed information about the certification goes here...
+

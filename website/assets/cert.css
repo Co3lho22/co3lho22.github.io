@@ -29,12 +29,27 @@
 }
 
 .cert-link a {
-  color: var(--color-accent);
+  color: var(--color-highlight);
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .cert-link a:hover {
-  color: var(--color-accent-dark);
+  color: var(--color-highlight-dark);
+}
+
+.cert-tags .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.cert-tags .tag {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: var(--color-accent);
+  color: var(--color-secondary);
+  border-radius: 5px;
 }
 
 /* Media Queries for Responsiveness */
