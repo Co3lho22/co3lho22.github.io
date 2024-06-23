@@ -52,6 +52,14 @@
   border-radius: 10px;
 }
 
+/* Add this to control the size of the bigger image */
+.article-image img {
+  max-width: 600px; /* Adjust the width as needed */
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
 .article-key-takeaways ul {
   list-style-type: disc;
   color: var(--color-secondary);

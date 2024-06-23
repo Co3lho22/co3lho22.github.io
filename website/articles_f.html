@@ -5,37 +5,69 @@
 <div class="filters">
   <input type="text" id="searchBar" placeholder="Search for title...">
   <div class="tags">
-    <span class="tag" onclick="filterArticles('Cybersecurity')">Cybersecurity</span>
-    <span class="tag" onclick="filterArticles('Cloud Computing')">Cloud Computing</span>
-    <span class="tag" onclick="filterArticles('Machine Learning')">Machine Learning</span>
-    <span class="tag" onclick="filterArticles('Programming')">Programming</span>
-    <span class="tag" onclick="filterArticles('Other')">Other</span>
+    <span class="tag" onclick="toggleTag('Cybersecurity')">Cybersecurity</span>
+    <span class="tag" onclick="toggleTag('Cloud Computing')">Cloud Computing</span>
+    <span class="tag" onclick="toggleTag('Machine Learning')">Machine Learning</span>
+    <span class="tag" onclick="toggleTag('Programming')">Programming</span>
+    <span class="tag" onclick="toggleTag('Other')">Other</span>
   </div>
+  <button class="clear-tags" onclick="clearTags()">Clear All Tags</button>
 </div>
 
 <div class="articles-list">
   {% for article in site.articles %}
-  <div class="article-item" data-tags="{{ article.tags | join: ' ' }}">
-    <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
-    <p>{{ article.excerpt }}</p>
-    <div class="tags">
-      {% for tag in article.tags %}
-      <span class="tag">{{ tag }}</span>
-      {% endfor %}
+  <a href="{{ article.url }}" class="article-item" data-tags="{{ article.tags | join: ' ' }}">
+    <img src="{{ article.image }}" alt="{{ article.title }} image">
+    <div class="article-info">
+      <h2>{{ article.title }}</h2>
+      <p>{{ article.excerpt }}</p>
+      <div class="tags">
+        {% for tag in article.tags %}
+        <span class="tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
     </div>
-  </div>
+  </a>
   {% endfor %}
 </div>
 
 <script>
-  function filterArticles(tag) {
+  let activeTags = [];
+
+  function toggleTag(tag) {
+    const tagIndex = activeTags.indexOf(tag);
+    if (tagIndex > -1) {
+      activeTags.splice(tagIndex, 1);
+    } else {
+      activeTags.push(tag);
+    }
+    updateTagDisplay();
+    filterArticles();
+  }
+
+  function clearTags() {
+    activeTags = [];
+    updateTagDisplay();
+    filterArticles();
+  }
+
+  function updateTagDisplay() {
+    const tags = document.querySelectorAll('.tag');
+    tags.forEach(tagElement => {
+      if (activeTags.includes(tagElement.innerText)) {
+        tagElement.classList.add('active');
+      } else {
+        tagElement.classList.remove('active');
+      }
+    });
+  }
+
+  function filterArticles() {
     const articles = document.querySelectorAll('.article-item');
     articles.forEach(article => {
-      if (article.getAttribute('data-tags').includes(tag)) {
-        article.style.display = 'block';
-      } else {
-        article.style.display = 'none';
-      }
+      const articleTags = article.getAttribute('data-tags').split(' ');
+      const matches = activeTags.every(tag => articleTags.includes(tag));
+      article.style.display = matches ? 'flex' : 'none';
     });
   }
 
@@ -45,7 +77,7 @@
     articles.forEach(article => {
       const title = article.querySelector('h2').textContent.toLowerCase();
       if (title.includes(query)) {
-        article.style.display = 'block';
+        article.style.display = 'flex';
       } else {
         article.style.display = 'none';
       }

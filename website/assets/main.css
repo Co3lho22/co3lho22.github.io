@@ -26,6 +26,10 @@ header {
   background: var(--color-accent);
   padding: 1rem 0;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed; /* Fix the header at the top */
+  width: 100%; /* Ensure it spans the full width */
+  top: 0; /* Position it at the top */
+  z-index: 1000; /* Ensure it is above other elements */
 }
 
 .nav {

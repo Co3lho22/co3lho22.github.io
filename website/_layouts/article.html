@@ -24,12 +24,12 @@
     <div class="article-details">
       <h1>{{ page.title }}</h1>
       <p class="date">{{ page.date | date: "%B %d, %Y" }}</p>
+      <div class="article-image">
+          <img src="{{ page.bigger_image }}" alt="Article Image">
+      </div>
       <div class="article-summary">
         <h2>Summary:</h2>
         <p>{{ page.excerpt }}</p>
-      </div>
-      <div class="article-image">
-        <img src="{{ page.image }}" alt="Article Image">
       </div>
       <div class="article-key-takeaways">
         <h2>Key Takeaways:</h2>
