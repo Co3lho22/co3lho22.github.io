@@ -16,6 +16,11 @@
   text-align: center;
 }
 
+.cert-details .date {
+  text-align: center;
+  color: var(--color-secondary);
+}
+
 .cert-details h2 {
   font-size: 1.5rem;
   color: var(--color-highlight);
@@ -26,6 +31,10 @@
   color: var(--color-secondary);
   font-size: 1.2rem;
   line-height: 1.6;
+}
+
+.cert-details p strong {
+  color: var(--color-highlight);
 }
 
 .cert-link a {

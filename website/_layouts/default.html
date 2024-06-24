@@ -4,10 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }} | Diogo Coelho</title>
-  <!-- Global CSS -->
   <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <!-- Page-specific CSS -->
   <link rel="stylesheet" href="{{ '/assets/' | append: page.title | downcase | append: '.css' | relative_url }}">
 </head>
 <body>
@@ -17,7 +15,9 @@
         <li><a href="{{ '/' | relative_url }}" class="{% if page.title == 'Home' %}active{% endif %}">Home</a></li>
         <li><a href="{{ '/bio' | relative_url }}" class="{% if page.title == 'Bio' %}active{% endif %}">Bio</a></li>
         <li><a href="{{ '/projects' | relative_url }}" class="{% if page.title == 'Projects' %}active{% endif %}">Projects</a></li>
+        <!--
         <li><a href="{{ '/articles' | relative_url }}" class="{% if page.title == 'Articles' %}active{% endif %}">Articles</a></li>
+        -->
         <li><a href="{{ '/certs' | relative_url }}" class="{% if page.title == 'Certs' %}active{% endif %}">Certs</a></li>
       </ul>
     </nav>

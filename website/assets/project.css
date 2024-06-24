@@ -22,6 +22,10 @@
   color: var(--color-secondary);
 }
 
+.project-details p strong {
+    color: var(--color-highlight);
+}
+
 .project-content {
   display: flex;
   gap: 2rem;

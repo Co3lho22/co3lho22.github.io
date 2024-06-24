@@ -6,9 +6,13 @@
   <input type="text" id="searchBar" placeholder="Search for title...">
   <div class="tags">
     <span class="tag" onclick="toggleTag('Security')">Security</span>
-    <span class="tag" onclick="toggleTag('Cloud')">Cloud</span>
-    <span class="tag" onclick="toggleTag('Networking')">Networking</span>
-    <span class="tag" onclick="toggleTag('Programming')">Programming</span>
+    <span class="tag" onclick="toggleTag('Pentest')">Pentest</span>
+    <span class="tag" onclick="toggleTag('Web-Security')">Web-Security</span>
+    <span class="tag" onclick="toggleTag('Network-Security')">Network-Security</span>
+    <span class="tag" onclick="toggleTag('Unix')">Unix</span>
+    <span class="tag" onclick="toggleTag('PentesterLab')">PentesterLab</span>
+    <span class="tag" onclick="toggleTag('TryHackMe')">TryHackMe</span>
+    <span class="tag" onclick="toggleTag('Coursera')">Coursera</span>
   </div>
   <button class="clear-tags" onclick="clearTags()">Clear All Tags</button>
 </div>
@@ -19,7 +23,7 @@
     <img src="{{ cert.image }}" alt="{{ cert.title }} image">
     <div class="cert-info">
       <h2>{{ cert.title }}</h2>
-      <p>{{ cert.description }}</p>
+      <p>{{ cert.small_description }}</p>
       <div class="tags">
         {% for tag in cert.tags %}
         <span class="tag">{{ tag }}</span>
