@@ -2,6 +2,7 @@
   text-align: center;
   padding: 2rem 0;
   background: var(--color-primary);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .home-header h1 {

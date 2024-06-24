@@ -8,7 +8,9 @@
 .certs-header h1 {
   font-size: 3rem;
   color: var(--color-highlight);
-  margin: 0;
+  text-shadow: 1px 1px 2px var(--color-accent);
+  margin-bottom: 1rem;
+
 }
 
 .filters {
