@@ -24,35 +24,35 @@
   </header>
 
   <main>
-      <div class="cert-details">
-          <h1>{{ page.title }}</h1>
-          <p class="date">{{ page.date | date: "%B %d, %Y" }}</p>
-          <div class="cert-description">
-              <h2>Description:</h2>
-              <p>{{ page.description }}</p>
-          </div>
-          <div class="cert-link">
-              <h2>Link:</h2>
-              <p><a href="{{ page.cert_link }}" target="_blank">{{ page.cert_link }}</a></p>
-          </div>
-          <div class="cert-tags">
-              <h2>Tags:</h2>
-              <div class="tags">
-                  {% for tag in page.tags %}
-                  <span class="tag">{{ tag }}</span>
-                  {% endfor %}
-              </div>
-          </div>
+    <div class="cert-details">
+      <h1>{{ page.title }}</h1>
+      <p class="date">{{ page.date | date: "%B %d, %Y" }}</p>
+      <div class="cert-description">
+        <h2>Description:</h2>
+        <p>{{ page.description }}</p>
       </div>
+      <div class="cert-link">
+        <h2>Link:</h2>
+        <p><a href="{{ page.cert_link }}" target="_blank">{{ page.cert_link }}</a></p>
+      </div>
+      <div class="cert-tags">
+        <h2>Tags:</h2>
+        <div class="tags">
+          {% for tag in page.tags %}
+          <span class="tag">{{ tag }}</span>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
   </main>
 
   <footer>
-      <div class="contact-section">
-          <a href="https://www.linkedin.com/in/diogo-coelho-544139115/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-          <a href="https://github.com/Co3lho22" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-          <a href="mailto:co3lho22@gmail.com"><i class="fas fa-envelope"></i> Email</a>
-      </div>
-      <p>&copy; 2024 Diogo Coelho</p>
+    <div class="contact-section">
+      <a href="https://www.linkedin.com/in/diogo-coelho-544139115/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="https://github.com/Co3lho22" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+      <a href="mailto:co3lho22@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+    </div>
+    <p>&copy; 2024 Diogo Coelho</p>
   </footer>
 </body>
 </html>

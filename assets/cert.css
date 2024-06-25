@@ -5,9 +5,9 @@
   background: var(--color-background);
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  display: flex; /* Use Flexbox for layout */
-  flex-direction: column; /* Column layout */
-  gap: 1.5rem; /* Gap between items */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .cert-details h1 {
@@ -68,6 +68,13 @@
   }
   .cert-details h1 {
     font-size: 2rem;
+  }
+}
+
+/* Adjusting padding for smaller screens */
+@media (max-width: 768px) {
+  .cert-details {
+    padding: 6rem 1rem 1rem 1rem; /* Increased top padding to prevent overlap with header */
   }
 }
 

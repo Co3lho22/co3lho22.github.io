@@ -1,13 +1,26 @@
 .article-details {
   max-width: 800px;
   margin: 2rem auto;
-  padding: 2rem;
   background: var(--color-background);
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+}
+
+/* Default padding for larger screens */
+@media (min-width: 769px) {
+  .article-details {
+    padding: 2rem 0;
+  }
+}
+
+/* Increased padding for smaller screens */
+@media (max-width: 768px) {
+  .article-details {
+    padding: 10rem 2rem 2rem 2rem; /* To avoid the overlap of the nav tab in smaller screens */
+  }
 }
 
 .article-details h1 {

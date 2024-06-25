@@ -102,7 +102,7 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .project-details {
-    padding: 1rem;
+    padding: 6rem 1rem 1rem 1rem; /* Increased top padding to prevent overlap with header */
   }
   .project-details h1 {
     font-size: 2rem;

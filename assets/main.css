@@ -19,7 +19,9 @@ body {
   padding: 0;
   line-height: 1.6;
   font-size: 16px;
-  padding-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 header {
@@ -63,18 +65,18 @@ header {
 }
 
 main {
-  padding: 2rem;
+  padding: 6rem 2rem 2rem 2rem; /* Added top padding to prevent overlap with header */
   background-color: var(--color-primary);
+  flex: 1;
 }
 
 footer {
   text-align: center;
   padding: 1rem;
   background: var(--color-accent-dark);
-  position: fixed;
-  width: 100%;
-  bottom: 0;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: auto;
+  width: 100%;
 }
 
 .contact-section {
@@ -120,12 +122,16 @@ button:hover, .button:hover {
 @media (max-width: 768px) {
   .nav {
     flex-direction: column;
+    align-items: center; /* Ensure items are centered */
+  }
+  .nav li {
+    margin: 0.5rem 0; /* Add vertical space between items */
   }
   .contact-section {
     flex-direction: column;
   }
   main {
-    padding: 1rem;
+    padding: 6rem 1rem 1rem 1rem; /* Adjust padding for smaller screens */
   }
 }
 

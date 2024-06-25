@@ -1,8 +1,21 @@
 .certs-header {
   text-align: center;
-  padding: 2rem 0;
   background: var(--color-primary);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Default padding for larger screens */
+@media (min-width: 769px) {
+  .certs-header {
+    padding: 2rem 0;
+  }
+}
+
+/* Increased padding for smaller screens */
+@media (max-width: 768px) {
+  .certs-header {
+    padding: 10rem 2rem 2rem 2rem; /* To avoid the overlap of the nav tab in smaller screens */
+  }
 }
 
 .certs-header h1 {
