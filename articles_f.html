@@ -3,17 +3,18 @@
 </div>
 
 <div class="filters">
-    <input type="text" id="searchBar" placeholder="Search for title...">
-    <div class="tags">
-        <span class="tag" onclick="toggleTag('Security')">Security</span>
-        <span class="tag" onclick="toggleTag('Rust')">Rust</span>
-        <span class="tag" onclick="toggleTag('ML')">ML</span>
-    </div>
-    <button class="clear-tags" onclick="clearTags()">Clear All Tags</button>
+  <input type="text" id="searchBar" placeholder="Search for title...">
+  <div class="tags">
+    <span class="tag" onclick="toggleTag('Security')">Security</span>
+    <span class="tag" onclick="toggleTag('Rust')">Rust</span>
+    <span class="tag" onclick="toggleTag('ML')">ML</span>
+  </div>
+  <button class="clear-tags" onclick="clearTags()">Clear All Tags</button>
 </div>
 
 <div class="articles-list">
-  {% for article in site.articles %}
+  {% assign sorted_articles = site.articles | sort: 'date' | reverse %}
+  {% for article in sorted_articles %}
   <a href="{{ article.url }}" class="article-item" data-tags="{{ article.tags | join: ' ' }}">
     <img src="{{ article.image }}" alt="{{ article.title }} image">
     <div class="article-info">

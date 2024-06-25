@@ -18,7 +18,8 @@
 </div>
 
 <div class="certs-list">
-  {% for cert in site.certs %}
+  {% assign sorted_certs = site.certs | sort: 'date' | reverse %}
+  {% for cert in sorted_certs %}
   <a href="{{ cert.url }}" class="cert-item" data-tags="{{ cert.tags | join: ' ' }}">
     <img src="{{ cert.image }}" alt="{{ cert.title }} image">
     <div class="cert-info">
