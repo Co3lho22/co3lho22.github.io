@@ -7,7 +7,7 @@
 /* Default padding for larger screens */
 @media (min-width: 769px) {
   .bio-header {
-    padding: 2rem 0;
+    padding: 0.5rem 0;
   }
 }
 
@@ -51,8 +51,9 @@
 }
 
 .bio-content p {
-  font-size: 1rem;
-  line-height: 1.6;
+      font-size: 1.2rem;
+      line-height: 1.6;
+
 }
 
 .bio-content p strong {

@@ -71,6 +71,16 @@ main {
   flex: 1;
 }
 
+main p {
+  text-align: justify;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+main p strong {
+  color: var(--color-highlight);
+}
+
 footer {
   text-align: center;
   padding: 1rem;

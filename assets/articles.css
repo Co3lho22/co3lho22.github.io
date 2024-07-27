@@ -7,7 +7,7 @@
 /* Default padding for larger screens */
 @media (min-width: 769px) {
   .articles-header {
-    padding: 2rem 0;
+    padding: 0.5rem 0;
   }
 }
 
