@@ -1,16 +1,16 @@
 # Site settings
-title: "your-handle::io"
-description: "Technical depth into cyber security, CTFs, and red teaming."
+title: "co3lho22"
+description: "CTFs, and red teaming."
 url: "https://your-username.github.io"
 baseurl: ""
 
 # Author info
 author:
-  name: "Your Name"
+  name: "Diogo"
   bio: "CTF Player | Penetration Tester | Red Team Enthusiast"
-  github: "your-username"
-  linkedin: "your-linkedin"
-  twitter: "your-twitter"
+  github: "Co3lho22"
+  linkedin: "diogo-coelho-544139115/"
+  twitter: "co3lho22"
 
 # Build settings
 markdown: kramdown

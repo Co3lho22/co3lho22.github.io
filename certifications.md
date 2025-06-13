@@ -92,3 +92,4 @@ permalink: /certifications/
   margin-bottom: var(--spacing-sm);
 }
 </style>
+
