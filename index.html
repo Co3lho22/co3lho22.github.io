@@ -1,0 +1,151 @@
+---
+layout: default
+---
+
+<div class="container">
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>{{ site.title }}</h1>
+    <p>{{ site.description }}</p>
+    <p class="hero-bio">{{ site.author.bio }}</p>
+  </section>
+
+  <!-- Recent Posts -->
+  <section class="recent-posts">
+    <h2>Recent Posts</h2>
+    <div class="posts-grid">
+      {% for post in site.posts limit:3 %}
+      <article class="post-card">
+        <header>
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <div class="post-meta">
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+            {% if post.category %} • {{ post.category | capitalize }}{% endif %}
+          </div>
+        </header>
+        {% if post.excerpt %}
+        <div class="post-excerpt">
+          {{ post.excerpt | strip_html | truncatewords: 30 }}
+        </div>
+        {% endif %}
+        {% if post.tags %}
+        <div class="post-tags">
+          {% for tag in post.tags %}
+          <a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}" class="tag">{{ tag }}</a>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </article>
+      {% endfor %}
+    </div>
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="{{ '/writings/' | relative_url }}" class="button">View All Posts →</a>
+    </div>
+  </section>
+
+  <!-- Recent Writeups -->
+  <section class="recent-writeups">
+    <h2>Recent Writeups</h2>
+    <div class="posts-grid">
+      {% for writeup in site.writeups limit:3 %}
+      <article class="post-card">
+        <header>
+          <h3><a href="{{ writeup.url | relative_url }}">{{ writeup.title }}</a></h3>
+          <div class="post-meta">
+            <time datetime="{{ writeup.date | date_to_xmlschema }}">{{ writeup.date | date: "%B %d, %Y" }}</time>
+            {% if writeup.platform %} • {{ writeup.platform | capitalize }}{% endif %}
+            {% if writeup.difficulty %} • {{ writeup.difficulty | capitalize }}{% endif %}
+          </div>
+        </header>
+        {% if writeup.excerpt %}
+        <div class="post-excerpt">
+          {{ writeup.excerpt | strip_html | truncatewords: 30 }}
+        </div>
+        {% endif %}
+        {% if writeup.tags %}
+        <div class="post-tags">
+          {% for tag in writeup.tags %}
+          <a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}" class="tag">{{ tag }}</a>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </article>
+      {% endfor %}
+    </div>
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="{{ '/writeups/' | relative_url }}" class="button">View All Writeups →</a>
+    </div>
+  </section>
+
+  <!-- Recent Projects -->
+  <section class="recent-projects">
+    <h2>Recent Projects</h2>
+    <div class="posts-grid">
+      {% for project in site.projects limit:3 %}
+      <article class="post-card">
+        <header>
+          <h3><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
+          <div class="post-meta">
+            {% if project.github %}
+            <a href="https://github.com/{{ project.github }}" target="_blank" rel="noopener">
+              GitHub
+            </a>
+            {% endif %}
+            {% if project.status %} • Status: {{ project.status | capitalize }}{% endif %}
+          </div>
+        </header>
+        {% if project.excerpt %}
+        <div class="post-excerpt">
+          {{ project.excerpt | strip_html | truncatewords: 30 }}
+        </div>
+        {% endif %}
+        {% if project.tags %}
+        <div class="post-tags">
+          {% for tag in project.tags %}
+          <a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}" class="tag">{{ tag }}</a>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </article>
+      {% endfor %}
+    </div>
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="{{ '/projects/' | relative_url }}" class="button">View All Projects →</a>
+    </div>
+  </section>
+</div>
+
+<style>
+.button {
+  display: inline-block;
+  background-color: var(--color-accent);
+  color: white;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  transition: var(--transition);
+  font-weight: 500;
+}
+
+.button:hover {
+  background-color: #60a5fa;
+  color: white;
+}
+
+.recent-posts, .recent-writeups, .recent-projects {
+  margin-bottom: var(--spacing-2xl);
+}
+
+.recent-posts h2, .recent-writeups h2, .recent-projects h2 {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  font-size: 1.875rem;
+}
+
+.hero-bio {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+</style>
+

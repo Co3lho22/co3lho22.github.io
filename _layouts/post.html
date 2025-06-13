@@ -1,0 +1,94 @@
+---
+layout: default
+---
+
+<div class="container">
+  <article class="article">
+    <header class="article-header">
+      <h1 class="article-title">{{ page.title }}</h1>
+      <div class="article-meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
+        {% if page.category %} • {{ page.category | capitalize }}{% endif %}
+        {% if page.author %} • by {{ page.author }}{% endif %}
+      </div>
+      {% if page.tags %}
+      <div class="post-tags">
+        {% for tag in page.tags %}
+        <a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}" class="tag">{{ tag }}</a>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </header>
+
+    <div class="article-content">
+      {{ content }}
+    </div>
+
+    <footer class="article-footer">
+      <div class="article-navigation">
+        {% if page.previous %}
+        <div class="nav-previous">
+          <a href="{{ page.previous.url | relative_url }}" rel="prev">
+            ← {{ page.previous.title }}
+          </a>
+        </div>
+        {% endif %}
+        {% if page.next %}
+        <div class="nav-next">
+          <a href="{{ page.next.url | relative_url }}" rel="next">
+            {{ page.next.title }} →
+          </a>
+        </div>
+        {% endif %}
+      </div>
+    </footer>
+  </article>
+</div>
+
+<style>
+.article-footer {
+  margin-top: var(--spacing-2xl);
+  padding-top: var(--spacing-xl);
+  border-top: 1px solid var(--color-border);
+}
+
+.article-navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+}
+
+.nav-previous, .nav-next {
+  flex: 1;
+}
+
+.nav-next {
+  text-align: right;
+}
+
+.article-navigation a {
+  display: block;
+  padding: var(--spacing-md);
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  color: var(--color-text);
+}
+
+.article-navigation a:hover {
+  border-color: var(--color-accent);
+  background-color: var(--color-hover);
+}
+
+@media (max-width: 768px) {
+  .article-navigation {
+    flex-direction: column;
+  }
+
+  .nav-next {
+    text-align: left;
+  }
+}
+</style>
+

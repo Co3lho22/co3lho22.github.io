@@ -1,0 +1,149 @@
+---
+layout: default
+---
+
+<div class="container">
+  <article class="article">
+    <header class="article-header">
+      <h1 class="article-title">{{ page.title }}</h1>
+      <div class="article-meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
+        {% if page.platform %} • {{ page.platform | capitalize }}{% endif %}
+        {% if page.difficulty %} • <span class="difficulty difficulty-{{ page.difficulty }}">{{ page.difficulty | capitalize }}</span>{% endif %}
+        {% if page.os %} • {{ page.os | capitalize }}{% endif %}
+      </div>
+      {% if page.tags %}
+      <div class="post-tags">
+        {% for tag in page.tags %}
+        <a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}" class="tag">{{ tag }}</a>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </header>
+
+    <div class="article-content">
+      {{ content }}
+    </div>
+
+    <footer class="article-footer">
+      {% if page.machine_info %}
+      <div class="machine-info">
+        <h3>Machine Information</h3>
+        <div class="info-grid">
+          {% if page.machine_info.ip %}<div><strong>IP:</strong> {{ page.machine_info.ip }}</div>{% endif %}
+          {% if page.machine_info.os %}<div><strong>OS:</strong> {{ page.machine_info.os }}</div>{% endif %}
+          {% if page.machine_info.difficulty %}<div><strong>Difficulty:</strong> {{ page.machine_info.difficulty }}</div>{% endif %}
+          {% if page.machine_info.points %}<div><strong>Points:</strong> {{ page.machine_info.points }}</div>{% endif %}
+        </div>
+      </div>
+      {% endif %}
+
+      <div class="article-navigation">
+        {% if page.previous %}
+        <div class="nav-previous">
+          <a href="{{ page.previous.url | relative_url }}" rel="prev">
+            ← {{ page.previous.title }}
+          </a>
+        </div>
+        {% endif %}
+        {% if page.next %}
+        <div class="nav-next">
+          <a href="{{ page.next.url | relative_url }}" rel="next">
+            {{ page.next.title }} →
+          </a>
+        </div>
+        {% endif %}
+      </div>
+    </footer>
+  </article>
+</div>
+
+<style>
+.difficulty {
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.difficulty-easy { background-color: #22c55e; color: white; }
+.difficulty-medium { background-color: #f59e0b; color: white; }
+.difficulty-hard { background-color: #ef4444; color: white; }
+.difficulty-insane { background-color: #8b5cf6; color: white; }
+
+.machine-info {
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.machine-info h3 {
+  margin-bottom: var(--spacing-md);
+  color: var(--color-accent);
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-sm);
+}
+
+.info-grid div {
+  padding: var(--spacing-sm);
+  background-color: var(--color-bg);
+  border-radius: var(--border-radius);
+}
+
+.article-footer {
+  margin-top: var(--spacing-2xl);
+  padding-top: var(--spacing-xl);
+  border-top: 1px solid var(--color-border);
+}
+
+.article-navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+}
+
+.nav-previous, .nav-next {
+  flex: 1;
+}
+
+.nav-next {
+  text-align: right;
+}
+
+.article-navigation a {
+  display: block;
+  padding: var(--spacing-md);
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  color: var(--color-text);
+}
+
+.article-navigation a:hover {
+  border-color: var(--color-accent);
+  background-color: var(--color-hover);
+}
+
+@media (max-width: 768px) {
+  .article-navigation {
+    flex-direction: column;
+  }
+
+  .nav-next {
+    text-align: left;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
