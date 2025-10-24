@@ -1,9 +1,12 @@
 # Site settings
-title: Your Name
-email: your.email@example.com
+# title: co3lho22
+title: Diogo Coelho (co3lho22)
+email: co3lho22@gmail.com
+# description: >-
+#   Cybersecurity researcher specializing in red team operations and binary exploitation.
+#   Master's student, xSTF team member.
 description: >-
-  Cybersecurity researcher specializing in red team operations and binary exploitation.
-  Master's student, xSTF team member.
+  CyberSecurity Researcher
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site
 
@@ -28,7 +31,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      author: "Your Name"
+      author: "co3lho22"
   - scope:
       path: ""
       type: "writeups"
@@ -54,9 +57,9 @@ navigation:
     url: /about/
 
 # Social links (update with your handles)
-github_username: yourusername
-twitter_username: yourusername
-linkedin_username: yourname
+github_username: Co3lho22
+twitter_username: co3lho22
+linkedin_username: diogocoelho22
 
 # Exclude from processing
 exclude:
