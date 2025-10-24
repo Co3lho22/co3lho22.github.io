@@ -1,0 +1,67 @@
+# Site settings
+title: Your Name
+email: your.email@example.com
+description: >-
+  Cybersecurity researcher specializing in red team operations and binary exploitation.
+  Master's student, xSTF team member.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:categories/:title/
+
+# Collections
+collections:
+  writeups:
+    output: true
+    permalink: /writeups/:title/
+  projects:
+    output: true
+    permalink: /projects/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Your Name"
+  - scope:
+      path: ""
+      type: "writeups"
+    values:
+      layout: "writeup"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+
+# Navigation
+navigation:
+  - title: Home
+    url: /
+  - title: Blog
+    url: /blog/
+  - title: Writeups
+    url: /writeups/
+  - title: Projects
+    url: /projects/
+  - title: About
+    url: /about/
+
+# Social links (update with your handles)
+github_username: yourusername
+twitter_username: yourusername
+linkedin_username: yourname
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - README.md
