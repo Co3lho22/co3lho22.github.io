@@ -279,44 +279,77 @@ pre code:hover {
   align-items: center;
   text-align: center;
   position: relative;
-}
-
-/* Subtle animated background gradient */
-.home-container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  opacity: 0.03;
-  background: radial-gradient(circle at 20% 50%, var(--accent) 0%, transparent 50%),
-              radial-gradient(circle at 80% 80%, var(--accent) 0%, transparent 50%);
-  animation: subtleFloat 20s ease-in-out infinite;
-  pointer-events: none;
-  z-index: 0;
-}
-
-@keyframes subtleFloat {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(-20px, 20px) scale(1.1); }
+  margin-top: calc(var(--spacing-lg) * -1); /* Pull up to header */
 }
 
 .home-header {
   margin-bottom: var(--spacing-xl);
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  padding: calc(var(--spacing-xl) * 2) var(--spacing-lg);
+  padding-top: calc(var(--spacing-xl) * 3); /* Extra top padding */
+  width: 100%;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Hero background image - Livraria Lello */
+.home-header::before {
+  content: '';
+  position: absolute;
+  top: calc(var(--spacing-lg) * -1); /* Extend to very top */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: calc(100% + var(--spacing-lg)); /* Cover including extension */
+  background-image: url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=2070');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.15;
+  z-index: -2;
+  pointer-events: none;
+}
+
+/* Dark overlay for text readability */
+.home-header::after {
+  content: '';
+  position: absolute;
+  top: calc(var(--spacing-lg) * -1); /* Match image extension */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: calc(100% + var(--spacing-lg));
+  background: linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.7) 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+[data-theme="dark"] .home-header::after {
+  background: linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.8) 100%);
 }
 
 .site-title {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: var(--spacing-sm);
-  background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   animation: fadeInUp 0.8s ease-out;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+[data-theme="dark"] .site-title {
+  background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 @keyframes fadeInUp {
@@ -332,10 +365,41 @@ pre code:hover {
 
 .site-description {
   font-size: 1.125rem;
-  color: var(--text-secondary);
+  color: #e0e0e0;
   max-width: 600px;
   margin: 0 auto;
   animation: fadeInUp 0.8s ease-out 0.2s both;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+  font-weight: 500;
+  line-height: 1.8;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.aka-name {
+  font-size: 1rem;
+  font-family: var(--font-mono);
+  color: #a0a0a0;
+  font-weight: 400;
+}
+
+.role {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #e8e8e8;
+}
+
+[data-theme="dark"] .site-description {
+  color: #d0d0d0;
+}
+
+[data-theme="dark"] .aka-name {
+  color: #888888;
+}
+
+[data-theme="dark"] .role {
+  color: #f0f0f0;
 }
 
 /* ===== Navigation Grid ===== */

@@ -1,12 +1,12 @@
 # Site settings
 # title: co3lho22
-title: Diogo Coelho (co3lho22)
+title: Diogo Coelho
 email: co3lho22@gmail.com
 # description: >-
 #   Cybersecurity researcher specializing in red team operations and binary exploitation.
 #   Master's student, xSTF team member.
 description: >-
-  CyberSecurity Researcher
+  aka co3lho22 | Cybersecurity Researcher
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site
 
