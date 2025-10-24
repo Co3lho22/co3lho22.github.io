@@ -736,6 +736,45 @@ pre code:hover {
   box-shadow: 0 8px 24px var(--shadow);
 }
 
+/* List styling with proper alignment */
+.post-content ul,
+.writeup-content ul,
+.project-content ul,
+.post-content ol,
+.writeup-content ol,
+.project-content ol {
+  margin-bottom: var(--spacing-md);
+  margin-left: 0;
+  padding-left: var(--spacing-xl);
+}
+
+.post-content ul,
+.writeup-content ul,
+.project-content ul {
+  list-style-type: disc;
+}
+
+.post-content ol,
+.writeup-content ol,
+.project-content ol {
+  list-style-type: decimal;
+}
+
+.post-content li,
+.writeup-content li,
+.project-content li {
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.8;
+  padding-left: var(--spacing-xs);
+}
+
+.post-content ul ul,
+.writeup-content ul ul,
+.project-content ul ul {
+  margin-top: var(--spacing-xs);
+  margin-bottom: var(--spacing-xs);
+}
+
 /* Smooth heading animations on scroll would go here if needed */
 .post-content h2,
 .writeup-content h2,

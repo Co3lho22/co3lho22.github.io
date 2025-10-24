@@ -2,14 +2,16 @@
 .highlight {
   background-color: var(--bg-secondary);
   border-radius: var(--border-radius);
-  padding: var(--spacing-sm);
+  padding: var(--spacing-md);
   overflow-x: auto;
   margin-bottom: var(--spacing-md);
+  position: relative;
+  border: 1px solid var(--border-color);
 }
 
 .highlight pre {
   margin: 0;
-  padding: 0;
+  padding: var(--spacing-sm);
   background: none;
 }
 
@@ -17,7 +19,55 @@
   background: none;
   padding: 0;
   font-size: 0.875rem;
-  line-height: 1.6;
+  line-height: 1.7;
+}
+
+/* Copy button for code blocks */
+.highlight {
+  position: relative;
+}
+
+.copy-code-button {
+  position: absolute;
+  top: var(--spacing-sm);
+  right: var(--spacing-sm);
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.75rem;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease, background 0.3s ease, transform 0.2s ease;
+  z-index: 10;
+}
+
+.highlight:hover .copy-code-button {
+  opacity: 1;
+}
+
+.copy-code-button:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+[data-theme="dark"] .copy-code-button:hover {
+  background: #4a8aff;
+}
+
+.copy-code-button:active {
+  transform: translateY(0);
+}
+
+.copy-code-button.copied {
+  background: #10b981;
+}
+
+.copy-code-button.copied::after {
+  content: ' ✓';
 }
 
 /* Light mode syntax colors */
@@ -84,3 +134,4 @@
 
 .highlight .p,
 .highlight .pi { color: var(--text-primary); }
+
