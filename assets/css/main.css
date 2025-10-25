@@ -305,11 +305,12 @@ pre code:hover {
   transform: translateX(-50%);
   width: 100vw;
   height: calc(100% + var(--spacing-lg)); /* Cover including extension */
-  background-image: url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=2070');
+  /* background-image: url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=2070'); */
+  background-image: url('/assets/images/fs.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.15;
+  opacity: 0.50;
   z-index: -2;
   pointer-events: none;
 }
