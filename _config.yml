@@ -2,9 +2,6 @@
 # title: co3lho22
 title: Diogo Coelho
 email: co3lho22@gmail.com
-# description: >-
-#   Cybersecurity researcher specializing in red team operations and binary exploitation.
-#   Master's student, xSTF team member.
 description: >-
   aka co3lho22 | Security Researcher
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -17,6 +14,9 @@ permalink: /:categories/:title/
 
 # Collections
 collections:
+  posts:
+    output: true
+    permalink: /blog/:title/
   writeups:
     output: true
     permalink: /writeups/:title/
