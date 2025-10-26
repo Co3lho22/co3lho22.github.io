@@ -28,8 +28,8 @@
   --border-radius: 8px;
 }
 
-/* Dark mode colors */
-[data-theme="dark"] {
+/* # Dark mode colors (blue) */
+/*[data-theme="dark"] {
   --bg-primary: #0d1117;
   --bg-secondary: #161b22;
   --bg-card: #161b22;
@@ -40,6 +40,69 @@
   --accent: #58a6ff;
   --accent-hover: #79c0ff;
   --shadow: rgba(0, 0, 0, 0.3);
+}
+*/
+
+/* # Dark mode colors (ice blue)*/
+/*
+[data-theme="dark"] {
+  --bg-primary: #0a0f14;
+  --bg-secondary: #0f1419;
+  --bg-card: #131a21;
+  --text-primary: #d6e6f3;
+  --text-secondary: #98b8d8;
+  --text-muted: #6c88a8;
+  --border-color: #1f2f3d;
+  --accent: #38bdf8;
+  --accent-hover: #7dd3fc;
+  --shadow: rgba(56, 189, 248, 0.15);
+}
+*/
+
+/* # Dark mode colors (electric blue)*/
+/*
+[data-theme="dark"] {
+  --bg-primary: #0a0d14;
+  --bg-secondary: #0f1221;
+  --bg-card: #131828;
+  --text-primary: #d6e0f3;
+  --text-secondary: #98acd8;
+  --text-muted: #6c7ca8;
+  --border-color: #1f2842;
+  --accent: #3b82f6;
+  --accent-hover: #60a5fa;
+  --shadow: rgba(59, 130, 246, 0.15);
+}
+*/
+
+/* # Dark mode colors (indigo)*/
+/*
+[data-theme="dark"] {
+  --bg-primary: #0b0d14;
+  --bg-secondary: #10131f;
+  --bg-card: #151828;
+  --text-primary: #dfe0f3;
+  --text-secondary: #a8acd8;
+  --text-muted: #787ca8;
+  --border-color: #252842;
+  --accent: #6366f1;
+  --accent-hover: #818cf8;
+  --shadow: rgba(99, 102, 241, 0.15);
+}
+*/
+
+/* # Dark mode colors */
+[data-theme="dark"] {
+  --bg-primary: #0a0d14;
+  --bg-secondary: #0f1221;
+  --bg-card: #131828;
+  --text-primary: #d6e0f3;
+  --text-secondary: #98acd8;
+  --text-muted: #6c7ca8;
+  --border-color: #1f2842;
+  --accent: #3b82f6;
+  --accent-hover: #60a5fa;
+  --shadow: rgba(59, 130, 246, 0.15);
 }
 
 /* ===== Base Styles ===== */
