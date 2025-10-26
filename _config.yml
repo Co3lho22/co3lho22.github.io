@@ -1,5 +1,4 @@
 # Site settings
-# title: co3lho22
 title: Diogo Coelho
 email: co3lho22@gmail.com
 description: >-
@@ -68,3 +67,4 @@ exclude:
   - node_modules
   - vendor
   - README.md
+

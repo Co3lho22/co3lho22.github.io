@@ -32,7 +32,7 @@ $ checksec chall
     PIE:      No PIE (0x400000)
 ```
 
-Key findings:
+`Key findings`:
 - **No stack canary**: Buffer overflow is possible
 - **NX enabled**: We can't execute shellcode on the stack
 - **No PIE**: Binary addresses are fixed
