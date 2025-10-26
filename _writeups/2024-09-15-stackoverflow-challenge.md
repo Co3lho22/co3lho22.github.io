@@ -19,6 +19,9 @@ We're given a binary that appears to be a simple login system. The goal is to ex
 
 First, let's check the binary protections:
 
+Testing a image:
+![pwndbg screenshot](/assets/images/writeups/pwn-dbg.png)
+
 ```bash
 $ checksec chall
 [*] '/home/user/chall'
@@ -52,13 +55,13 @@ Let's examine the vulnerable function in Ghidra:
 void login() {
     char username[32];
     char password[32];
-    
+
     printf("Username: ");
     gets(username);  // Vulnerable!
-    
+
     printf("Password: ");
     gets(password);  // Also vulnerable!
-    
+
     if (strcmp(username, "admin") == 0 && strcmp(password, "secret") == 0) {
         printf("Access granted!\n");
         system("/bin/sh");
