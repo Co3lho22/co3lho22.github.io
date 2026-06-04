@@ -9,6 +9,8 @@
   --font-sans:    'Inter', system-ui, -apple-system, sans-serif;
   --font-mono:    'JetBrains Mono', 'Courier New', monospace;
   --max-width:    680px;
+  --dot:          rgba(255, 255, 255, 0.045);
+  --glow:         rgba(0, 180, 216, 0.07);
 }
 
 [data-theme="light"] {
@@ -18,6 +20,8 @@
   --text-muted:   #57606a;
   --accent:       #0284c7;
   --border:       #d0d7de;
+  --dot:          rgba(0, 0, 0, 0.05);
+  --glow:         rgba(2, 132, 199, 0.04);
 }
 
 /* ===== Reset ===== */
@@ -33,6 +37,10 @@ html {
 
 body {
   background: var(--bg);
+  background-image:
+    radial-gradient(ellipse 75% 40% at 50% 0%, var(--glow) 0%, transparent 100%),
+    radial-gradient(var(--dot) 1px, transparent 1px);
+  background-size: auto, 20px 20px;
   color: var(--text);
   font-family: var(--font-sans);
   font-size: 1rem;
@@ -45,6 +53,32 @@ body {
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
+}
+
+/* ===== Corner brackets ===== */
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.22;
+  border-color: var(--accent);
+  border-style: solid;
+}
+
+body::before {
+  top: 1.25rem;
+  left: 1.25rem;
+  border-width: 1.5px 0 0 1.5px;
+}
+
+body::after {
+  bottom: 1.25rem;
+  right: 1.25rem;
+  border-width: 0 1.5px 1.5px 0;
 }
 
 /* ===== Theme toggle ===== */
@@ -128,6 +162,22 @@ body {
   color: var(--accent);
   font-size: 0.95rem;
   margin-bottom: 0.4rem;
+  text-shadow: 0 0 18px rgba(0, 180, 216, 0.4);
+}
+
+[data-theme="light"] .alias {
+  text-shadow: none;
+}
+
+.alias::after {
+  content: '_';
+  animation: blink 1.2s step-end infinite;
+  margin-left: 1px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
 }
 
 .tagline {
@@ -148,6 +198,15 @@ h2 {
   text-transform: uppercase;
   color: var(--text-muted);
   margin-bottom: 1.25rem;
+}
+
+h2::before {
+  content: '// ';
+  color: var(--accent);
+  font-family: var(--font-mono);
+  opacity: 0.6;
+  text-transform: none;
+  letter-spacing: 0;
 }
 
 p {
@@ -238,6 +297,7 @@ ul li::before {
 
 .card:hover {
   border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent), 0 0 20px rgba(0, 180, 216, 0.08);
   text-decoration: none;
 }
 
