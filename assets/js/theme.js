@@ -1,25 +1,17 @@
-// Theme toggle functionality
-(function() {
-  const themeToggleBtn = document.getElementById('theme-toggle-btn');
-  const themeIcon = document.querySelector('.theme-icon');
-  const root = document.documentElement;
+(function () {
+  var btn = document.getElementById('theme-toggle');
+  var icon = document.getElementById('theme-icon');
+  var root = document.documentElement;
 
-  // Check for saved theme preference or default to light mode
-  const currentTheme = localStorage.getItem('theme') || 'dark';
-  root.setAttribute('data-theme', currentTheme);
-  updateIcon(currentTheme);
+  var saved = localStorage.getItem('theme') || 'dark';
+  root.setAttribute('data-theme', saved);
+  icon.textContent = saved === 'dark' ? '☀' : '☽';
 
-  // Theme toggle handler
-  themeToggleBtn.addEventListener('click', function() {
-    const currentTheme = root.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-    root.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    updateIcon(newTheme);
+  btn.addEventListener('click', function () {
+    var current = root.getAttribute('data-theme');
+    var next = current === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    icon.textContent = next === 'dark' ? '☀' : '☽';
   });
-
-  function updateIcon(theme) {
-    themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
-  }
 })();

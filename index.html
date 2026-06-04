@@ -1,56 +1,141 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diogo Coelho</title>
+  <meta name="description" content="Diogo Coelho — Cybersecurity Researcher from Porto, Portugal.">
 
-<div class="home-container">
-  <header class="home-header">
-    <h1 class="site-title">{{ site.title }}</h1>
-    <p class="site-description">
-      <span class="aka-name">aka co3lho22</span>
-      <span class="role">Security Researcher</span>
-    </p>
-  </header>
+  <link rel="stylesheet" href="assets/css/main.css">
 
-  <nav class="home-nav">
-    <div class="nav-grid">
-      <a href="/blog/" class="nav-card">
-        <span class="nav-icon">📝</span>
-        <h2>Blog</h2>
-        <p>Thoughts on security, anonymity, and data protection</p>
-      </a>
+  <link rel="icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="assets/site.webmanifest">
 
-      <a href="/writeups/" class="nav-card">
-        <span class="nav-icon">🚩</span>
-        <h2>CTF Writeups</h2>
-        <p>Solutions and methodologies from competitions</p>
-      </a>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
 
-      <a href="/projects/" class="nav-card">
-        <span class="nav-icon">🔬</span>
-        <h2>Projects & Research</h2>
-        <p>Malware analysis, fuzzing, and security research</p>
-      </a>
+  <button id="theme-toggle" aria-label="Toggle theme">
+    <span id="theme-icon">&#9788;</span>
+  </button>
 
-      <a href="/about/" class="nav-card">
-        <span class="nav-icon">👤</span>
+  <div class="container">
+
+    <header class="hero">
+      <h1>Diogo Coelho</h1>
+      <p class="alias">co3lho22</p>
+      <p class="tagline">Cybersecurity Researcher &middot; Porto, Portugal</p>
+    </header>
+
+    <main>
+
+      <section id="about">
         <h2>About</h2>
-        <p>Resume, background, and contact information</p>
-      </a>
-    </div>
-  </nav>
+        <p>
+          I'm finishing my Master's in Cybersecurity at Universidade do Porto.
+          Most of my time goes into binary exploitation, reverse engineering malware, and CTF competitions.
+        </p>
+        <p>
+          Currently preparing for a PhD and working toward finding real-world vulnerabilities.
+        </p>
+      </section>
 
-  <footer class="home-footer">
-    <div class="social-links">
-      {% if site.github_username %}
-      <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener">GitHub</a>
-      {% endif %}
-      {% if site.twitter_username %}
-      <a href="https://twitter.com/{{ site.twitter_username }}" target="_blank" rel="noopener">Twitter</a>
-      {% endif %}
-      {% if site.linkedin_username %}
-      <a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank" rel="noopener">LinkedIn</a>
-      {% endif %}
-    </div>
-  </footer>
-</div>
+      <section id="education">
+        <h2>Education</h2>
+        <div class="timeline">
+          <div class="entry">
+            <span class="year">2024 &ndash; 2026</span>
+            <div>
+              <strong>MSc Cybersecurity</strong>
+              <span class="institution">Universidade do Porto</span>
+            </div>
+          </div>
+          <div class="entry">
+            <span class="year">2020 &ndash; 2024</span>
+            <div>
+              <strong>BSc Computer Science</strong>
+              <span class="institution">Universidade do Porto</span>
+            </div>
+          </div>
+        </div>
+      </section>
 
+      <section id="achievements">
+        <h2>Achievements</h2>
+        <ul>
+          <!-- Add your CTF placements, competition results, and other achievements here -->
+          <li>Member of xSTF, competing nationally and internationally in CTF competitions</li>
+          <li>Authored challenges for UPCTF and other competitions</li>
+        </ul>
+      </section>
+
+      <section id="work">
+        <h2>What I Do</h2>
+        <div class="cards">
+          <a href="https://ctf.co3lho22.com" class="card">
+            <h3>CTF Player &amp; Author</h3>
+            <p>Competing with xSTF, focused on pwn and rev. Creating challenges for competitions like UPCTF.</p>
+          </a>
+          <a href="https://research.co3lho22.com" class="card">
+            <h3>Security Research</h3>
+            <p>Hunting for zero-days, reversing malware, firmware exploitation, and building security tooling.</p>
+          </a>
+        </div>
+      </section>
+
+      <section id="interests">
+        <h2>Areas of Interest</h2>
+        <ul class="tags">
+          <li>Binary Exploitation</li>
+          <li>Reverse Engineering</li>
+          <li>Malware Analysis</li>
+          <li>Fuzzing</li>
+          <li>Red Teaming</li>
+          <li>Firmware Security</li>
+        </ul>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <!--
+          To enable the form: create a free account at https://formspree.io,
+          create a form, and replace YOUR_FORM_ID below with your form's ID.
+        -->
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required autocomplete="name">
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required autocomplete="email">
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <button type="submit">Send message</button>
+        </form>
+        <p class="contact-alt">
+          Or reach me directly at <a href="mailto:contact@co3lho22.com">contact@co3lho22.com</a>
+        </p>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="social">
+        <a href="https://github.com/Co3lho22" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://x.com/co3lho22" target="_blank" rel="noopener">X</a>
+        <a href="https://linkedin.com/in/diogocoelho22" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="assets/js/theme.js"></script>
+</body>
+</html>
